@@ -11,7 +11,6 @@ import Testimonials from '@/components/Testimonials';
 import Admissions from '@/components/Admissions';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import schoolConfig from '@/config/schoolConfig';
 
 function App() {
   return (

@@ -1,6 +1,9 @@
 import { Check } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import schoolConfig from '@/config/schoolConfig';
+import siteConfig from '@/config/siteConfig';
+
+const [aboutImg1, aboutImg2, aboutImg3, aboutImg4] = siteConfig.media.aboutImages;
 
 const highlights = [
   'Child-centred, activity-based curriculum',
@@ -16,8 +19,22 @@ export default function About() {
   const rightRef = useScrollReveal();
 
   return (
-    <section id="about" className="relative overflow-hidden bg-cream-100 py-20 lg:py-28">
+    <section id="about" className="relative overflow-hidden bg-cream-100 py-8 md:py-10 lg:py-12">
       <div className="absolute right-0 top-20 h-64 w-64 rounded-full bg-primary-100/40 blur-3xl" />
+
+      {/* Subtle floral decorative elements */}
+      <div className="pointer-events-none absolute left-[4%] top-[15%] hidden opacity-20 animate-float-slow lg:block" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C9 6 9 10 12 14C15 10 15 6 12 2Z" fill="#22c55e" />
+          <path d="M4 12C8 10 11 11 13 14C10 17 6 17 4 12Z" fill="#4ade80" />
+        </svg>
+      </div>
+      <div className="pointer-events-none absolute right-[6%] bottom-[10%] hidden opacity-15 animate-float-medium lg:block" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="3.2" fill="#facc15" />
+          <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" stroke="#facc15" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -27,16 +44,16 @@ export default function About() {
               <div className="space-y-4">
                 <div className="overflow-hidden rounded-3xl rounded-br-[3rem] border-4 border-white shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
                   <img
-                    src="https://images.pexels.com/photos/8535181/pexels-photo-8535181.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-                    alt="Teacher reading to children"
+                    src={aboutImg1.src}
+                    alt={aboutImg1.alt}
                     className="h-48 w-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="lazy"
                   />
                 </div>
                 <div className="overflow-hidden rounded-3xl rounded-tr-[3rem] border-4 border-white shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
                   <img
-                    src="https://images.pexels.com/photos/8422165/pexels-photo-8422165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-                    alt="Children with colourful clay"
+                    src={aboutImg2.src}
+                    alt={aboutImg2.alt}
                     className="h-40 w-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="lazy"
                   />
@@ -45,16 +62,16 @@ export default function About() {
               <div className="space-y-4 pt-8">
                 <div className="overflow-hidden rounded-3xl rounded-bl-[3rem] border-4 border-white shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
                   <img
-                    src="https://images.pexels.com/photos/8613146/pexels-photo-8613146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-                    alt="Children playing with colourful balls"
+                    src={aboutImg3.src}
+                    alt={aboutImg3.alt}
                     className="h-40 w-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="lazy"
                   />
                 </div>
                 <div className="overflow-hidden rounded-3xl rounded-tl-[3rem] border-4 border-white shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
                   <img
-                    src="https://images.pexels.com/photos/8923075/pexels-photo-8923075.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-                    alt="Teacher helping a child"
+                    src={aboutImg4.src}
+                    alt={aboutImg4.alt}
                     className="h-48 w-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="lazy"
                   />

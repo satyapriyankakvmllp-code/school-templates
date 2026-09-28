@@ -39,11 +39,11 @@ export default function Facilities() {
   const gridRef = useScrollReveal();
 
   return (
-    <section className="relative overflow-hidden bg-cream-100 py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-cream-100 py-8 md:py-10 lg:py-12">
       <div className="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-accent-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div ref={headerRef} className="reveal mx-auto mb-14 max-w-2xl text-center">
+        <div ref={headerRef} className="reveal mx-auto mb-8 max-w-2xl text-center">
           <p className="section-subtitle">Our Facilities</p>
           <h2 className="section-title mt-2">Thoughtfully Designed for Little Ones</h2>
           <p className="mt-4 text-base text-neutral-600">

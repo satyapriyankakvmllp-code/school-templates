@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MapPin, Mail, Phone, Send, CheckCircle2 } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import schoolConfig from '@/config/schoolConfig';
+import siteConfig from '@/config/siteConfig';
 
 export default function Contact() {
   const ref = useScrollReveal();
@@ -23,26 +23,26 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Visit Us',
-      value: schoolConfig.locationShort,
+      value: siteConfig.contact.locationShort,
     },
     {
       icon: Mail,
       title: 'Email',
-      value: schoolConfig.email,
+      value: siteConfig.contact.email,
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: schoolConfig.phone,
+      value: siteConfig.contact.phone,
     },
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-cream-100 py-20 lg:py-28">
+    <section id="contact" className="relative overflow-hidden bg-cream-100 py-8 md:py-10 lg:py-12">
       <div className="absolute right-0 top-1/4 h-72 w-72 rounded-full bg-secondary-100/40 blur-3xl" />
 
       <div ref={ref} className="reveal relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
+        <div className="mx-auto mb-8 max-w-2xl text-center">
           <p className="section-subtitle">Contact Us</p>
           <h2 className="section-title mt-2">We'd Love to Hear From You</h2>
           <p className="mt-4 text-base text-neutral-600">
@@ -78,10 +78,10 @@ export default function Contact() {
             <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-secondary-400 to-secondary-600 p-6 shadow-card">
               <h4 className="font-display text-lg font-bold text-white">School Location</h4>
               <p className="mt-1 text-sm text-white/90">
-                {schoolConfig.location}
+                {siteConfig.contact.address}
               </p>
               <p className="mt-3 text-xs text-white/70">
-                Visit us during school hours to experience the Little Krishna environment
+                Visit us during school hours to experience the {siteConfig.brand.name} environment
                 first-hand.
               </p>
             </div>

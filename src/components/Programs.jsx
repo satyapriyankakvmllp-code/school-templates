@@ -45,13 +45,19 @@ export default function Programs() {
   const cardsRef = useScrollReveal();
 
   return (
-    <section id="programs" className="relative overflow-hidden bg-white py-20 lg:py-28">
+    <section id="programs" className="relative overflow-hidden bg-white py-8 md:py-10 lg:py-12">
       <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-secondary-100/30 blur-3xl" />
       <div className="absolute right-0 bottom-1/4 h-72 w-72 rounded-full bg-accent-100/30 blur-3xl" />
 
+      {/* Subtle cartoon decorative elements */}
+      <div className="pointer-events-none absolute left-[6%] top-[12%] hidden text-3xl opacity-20 animate-float-slow sm:block">☁️</div>
+      <div className="pointer-events-none absolute right-[8%] top-[20%] hidden text-2xl opacity-20 animate-float-medium sm:block">⭐</div>
+      <div className="pointer-events-none absolute left-[10%] bottom-[10%] hidden text-2xl opacity-20 animate-float-fast lg:block">📚</div>
+      <div className="pointer-events-none absolute right-[5%] bottom-[18%] hidden text-3xl opacity-15 animate-wiggle lg:block">🎈</div>
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className="reveal mx-auto mb-14 max-w-2xl text-center">
+        <div ref={headerRef} className="reveal mx-auto mb-8 max-w-2xl text-center">
           <p className="section-subtitle">Our Programs</p>
           <h2 className="section-title mt-2">Learning for Every Little Step</h2>
           <p className="mt-4 text-base text-neutral-600">

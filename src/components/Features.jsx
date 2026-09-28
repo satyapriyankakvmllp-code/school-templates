@@ -36,7 +36,7 @@ export default function Features() {
   const ref = useScrollReveal();
 
   return (
-    <section className="relative -mt-2 bg-cream-100 py-16 lg:py-24">
+    <section className="relative bg-cream-100 py-6 md:py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => {

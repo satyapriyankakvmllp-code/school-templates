@@ -1,5 +1,6 @@
 import { Moon, Heart, Utensils, BookOpen, Music, ShieldCheck } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import siteConfig from '@/config/siteConfig';
 
 const careFeatures = [
   { icon: Heart, title: 'Loving Care', desc: 'Warm, attentive supervision throughout the day.' },
@@ -14,7 +15,7 @@ export default function DayCare() {
   const ref = useScrollReveal();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 to-primary-50 py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 to-primary-50 py-8 md:py-10 lg:py-12">
       <div className="absolute inset-0 bg-dots opacity-30" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -23,9 +24,9 @@ export default function DayCare() {
           <div className="relative order-2 lg:order-1">
             <div className="overflow-hidden rounded-[2.5rem] rounded-tl-[6rem] border-8 border-white shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
               <img
-                src="https://images.pexels.com/photos/8612915/pexels-photo-8612915.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-                alt="Child playing with wooden toy train"
-                className="h-[400px] w-full object-cover"
+                src={siteConfig.media.dayCareImage}
+                alt="Teacher and children enjoying activities together at the day care"
+                className="block aspect-[3/2] h-auto w-full object-cover"
                 loading="lazy"
               />
             </div>

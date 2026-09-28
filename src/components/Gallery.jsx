@@ -1,47 +1,51 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import siteConfig from '@/config/siteConfig';
 
+const [g1, g2, g3, g4, g5, g6] = siteConfig.media.galleryImages;
 const galleryImages = [
   {
-    src: 'https://images.pexels.com/photos/8535169/pexels-photo-8535169.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'Teacher reading a story to children',
+    src: g1,
+    alt: 'Children reading together in the classroom',
     label: 'Story Time',
     span: 'lg:row-span-2 lg:col-span-2',
     height: 'h-64 lg:h-full',
   },
   {
-    src: 'https://images.pexels.com/photos/7025540/pexels-photo-7025540.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: g2,
     alt: 'Children enjoying arts and crafts',
     label: 'Art & Craft',
     span: '',
     height: 'h-48',
   },
   {
-    src: 'https://images.pexels.com/photos/8613174/pexels-photo-8613174.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'Children lying on grass playing',
+    src: g3,
+    alt: 'Children taking part in a hands-on activity',
     label: 'Play Time',
     span: '',
     height: 'h-48',
   },
   {
-    src: 'https://images.pexels.com/photos/8422205/pexels-photo-8422205.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'Children learning with teacher',
+    src: g4,
+    alt: 'Teacher and children enjoying activities together',
     label: 'Learning Together',
     span: 'lg:col-span-2',
     height: 'h-48',
   },
   {
-    src: 'https://images.pexels.com/photos/3997718/pexels-photo-3997718.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'Children at outdoor playground',
-    label: 'Outdoor Fun',
+    src: g5,
+    alt: 'Children dressed in traditional outfits for cultural day',
+    label: 'Cultural Day',
     span: '',
     height: 'h-48',
+    position: '50% 28%',
   },
   {
-    src: 'https://images.pexels.com/photos/8467297/pexels-photo-8467297.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'Kids in creative art activities',
+    src: g6,
+    alt: 'Child making a creative handprint art activity',
     label: 'Creative Play',
     span: '',
     height: 'h-48',
+    position: '50% 22%',
   },
 ];
 
@@ -50,13 +54,13 @@ export default function Gallery() {
   const gridRef = useScrollReveal();
 
   return (
-    <section id="gallery" className="relative bg-white py-20 lg:py-28">
+    <section id="gallery" className="relative bg-white py-8 md:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div ref={headerRef} className="reveal mx-auto mb-14 max-w-2xl text-center">
+        <div ref={headerRef} className="reveal mx-auto mb-8 max-w-2xl text-center">
           <p className="section-subtitle">Gallery</p>
           <h2 className="section-title mt-2">Moments of Joy and Learning</h2>
           <p className="mt-4 text-base text-neutral-600">
-            A glimpse into everyday life at Little Krishna — full of smiles, creativity,
+            A glimpse into everyday life at {siteConfig.brand.name} — full of smiles, creativity,
             friendship and discovery.
           </p>
         </div>
@@ -74,6 +78,7 @@ export default function Gallery() {
                 src={image.src}
                 alt={image.alt}
                 className={`w-full ${image.height} object-cover transition-transform duration-500 group-hover:scale-110`}
+                style={image.position ? { objectPosition: image.position } : undefined}
                 loading="lazy"
               />
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-neutral-900/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">

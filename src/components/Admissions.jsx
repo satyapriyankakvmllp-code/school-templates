@@ -1,6 +1,7 @@
 import { ArrowRight, CalendarHeart, PhoneCall, MapPin, MessagesSquare } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import schoolConfig from '@/config/schoolConfig';
+import siteConfig from '@/config/siteConfig';
 
 const steps = [
   {
@@ -26,7 +27,7 @@ export default function Admissions() {
   return (
     <section
       id="admissions"
-      className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-accent-500 py-20 lg:py-28"
+      className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-accent-500 py-8 md:py-10 lg:py-12"
     >
       {/* Decorative shapes */}
       <div className="absolute inset-0 bg-dots opacity-20" />
@@ -36,7 +37,7 @@ export default function Admissions() {
       <div className="absolute right-[15%] bottom-[30%] animate-float-medium h-10 w-10 rounded-full bg-white/10" />
 
       <div ref={ref} className="reveal relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
+        <div className="mx-auto mb-8 max-w-2xl text-center">
           <p className="font-display text-sm font-bold uppercase tracking-wider text-white/80">
             Admissions
           </p>
@@ -44,7 +45,7 @@ export default function Admissions() {
             Begin Your Child's Journey With Us
           </h2>
           <p className="mt-4 text-base text-white/90">
-            We would love to welcome your little one to the Little Krishna family. Here's how
+            We would love to welcome your little one to the {siteConfig.brand.name} family. Here's how
             you can get started.
           </p>
         </div>

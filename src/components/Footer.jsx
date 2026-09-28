@@ -1,5 +1,6 @@
 import { MapPin, ArrowUp, Facebook, Instagram, Youtube } from 'lucide-react';
 import schoolConfig from '@/config/schoolConfig';
+import siteConfig from '@/config/siteConfig';
 
 const footerLinks = [
   { label: 'Home', href: '#home' },
@@ -37,17 +38,17 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <img
-                src={schoolConfig.logo}
-                alt={`${schoolConfig.title} logo`}
-                className="h-12 w-12 rounded-full object-cover"
+                src={siteConfig.brand.logo}
+                alt={`${siteConfig.brand.title} logo`}
+                className="h-12 w-12 rounded-full object-cover ring-2 ring-white/10"
                 onError={(e) => { e.currentTarget.src = '/assets/logo.svg'; }}
               />
               <div>
-                <p className="font-display text-lg font-extrabold text-white">
-                  Little Krishna
+                <p className="font-display text-lg font-extrabold tracking-tight text-white">
+                  {siteConfig.brand.name}
                 </p>
-                <p className="text-xs uppercase tracking-wider text-neutral-400">
-                  Play School
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">
+                  {siteConfig.brand.shortTitle}
                 </p>
               </div>
             </div>
@@ -102,22 +103,26 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                { icon: Facebook, label: 'Facebook' },
-                { icon: Instagram, label: 'Instagram' },
-                { icon: Youtube, label: 'YouTube' },
-              ].map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href="#"
-                    aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-primary-500 hover:-translate-y-1 hover:rotate-6"
-                  >
-                    <Icon size={18} />
-                  </a>
-                );
-              })}
+                { icon: Facebook, label: 'Facebook', href: siteConfig.social.facebook },
+                { icon: Instagram, label: 'Instagram', href: siteConfig.social.instagram },
+                { icon: Youtube, label: 'YouTube', href: siteConfig.social.youtube },
+              ]
+                .filter((social) => social.href)
+                .map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-primary-500 hover:-translate-y-1 hover:rotate-6"
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
             </div>
           </div>
         </div>

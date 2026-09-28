@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, MapPin } from 'lucide-react';
 import schoolConfig from '@/config/schoolConfig';
+import siteConfig from '@/config/siteConfig';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,27 +34,23 @@ export default function Header() {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3" onClick={closeMobile}>
             <img
-              src={schoolConfig.logo}
-              alt={`${schoolConfig.title} logo`}
-              className="h-12 w-12 rounded-full object-cover shadow-soft transition-transform duration-300 hover:scale-110 hover:rotate-6"
+              src={siteConfig.brand.logo}
+              alt={`${siteConfig.brand.title} logo`}
+              className="h-11 w-11 rounded-full object-cover ring-2 ring-white shadow-soft transition-transform duration-300 group-hover:scale-110 hover:scale-110 hover:rotate-6 sm:h-12 sm:w-12"
               onError={(e) => {
                 e.currentTarget.src = '/assets/logo.svg';
               }}
             />
-            <div className="flex flex-col leading-tight">
-              <span
-                className={`font-display text-lg font-extrabold transition-colors duration-300 ${
-                  scrolled ? 'text-primary-600' : 'text-primary-600'
-                }`}
-              >
-                Little Krishna
+            <div className="flex flex-col justify-center leading-none">
+              <span className="font-display text-lg font-extrabold tracking-tight text-primary-600 sm:text-xl">
+                {siteConfig.brand.name}
               </span>
               <span
-                className={`text-[10px] font-medium uppercase tracking-wider transition-colors duration-300 ${
+                className={`mt-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
                   scrolled ? 'text-neutral-500' : 'text-neutral-600'
                 }`}
               >
-                Play School
+                {siteConfig.brand.shortTitle}
               </span>
             </div>
           </a>
@@ -98,13 +95,13 @@ export default function Header() {
             <div className="flex items-center justify-between border-b border-neutral-100 p-5">
               <div className="flex items-center gap-3">
                 <img
-                  src={schoolConfig.logo}
+                  src={siteConfig.brand.logo}
                   alt="logo"
                   className="h-10 w-10 rounded-full object-cover"
                   onError={(e) => { e.currentTarget.src = '/assets/logo.svg'; }}
                 />
-                <span className="font-display text-base font-bold text-primary-600">
-                  Little Krishna
+                <span className="font-display text-base font-bold tracking-tight text-primary-600">
+                  {siteConfig.brand.name}
                 </span>
               </div>
               <button

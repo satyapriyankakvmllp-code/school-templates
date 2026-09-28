@@ -1,22 +1,23 @@
+/**
+ * schoolConfig.js
+ * ---------------------------------------------------------------------------
+ * Kept for backward compatibility. All real configuration now lives in
+ * `siteConfig.js` — edit that file when re-branding for a new client.
+ * This just re-shapes it into the flatter fields older components expect.
+ * ---------------------------------------------------------------------------
+ */
+import siteConfig from './siteConfig';
+
 const schoolConfig = {
-  title: "Little Krishna Play School",
-  tagline: "Where Little Minds Learn, Play and Grow",
-  logo: "/assets/logo.svg",
-  location: "Muralinagar, Visakhapatnam, Andhra Pradesh, India",
-  locationShort: "Muralinagar, Visakhapatnam",
-  welcomeMessage:
-    "A joyful and caring environment where little children explore, learn, play and grow through meaningful everyday experiences.",
-  email: "Contact details to be updated",
-  phone: "Contact details to be updated",
-  navLinks: [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Programs", href: "#programs" },
-    { label: "Activities", href: "#activities" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Admissions", href: "#admissions" },
-    { label: "Contact", href: "#contact" },
-  ],
+  title: siteConfig.brand.title,
+  tagline: siteConfig.brand.tagline,
+  logo: siteConfig.brand.logo,
+  location: siteConfig.contact.address,
+  locationShort: siteConfig.contact.locationShort,
+  welcomeMessage: siteConfig.copy.welcomeMessage,
+  email: siteConfig.contact.email,
+  phone: siteConfig.contact.phone,
+  navLinks: siteConfig.navLinks,
 };
 
 export default schoolConfig;
