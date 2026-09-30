@@ -1,6 +1,7 @@
-import { MapPin, ArrowUp, Facebook, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowUp, Facebook, Instagram, Youtube } from 'lucide-react';
 import schoolConfig from '@/config/schoolConfig';
 import siteConfig from '@/config/siteConfig';
+import { openEmail } from '@/utils/email';
 
 const footerLinks = [
   { label: 'Home', href: '#home' },
@@ -40,11 +41,11 @@ export default function Footer() {
               <img
                 src={siteConfig.brand.logo}
                 alt={`${siteConfig.brand.title} logo`}
-                className="h-12 w-12 rounded-full object-cover ring-2 ring-white/10"
+                className="h-20 w-20 rounded-full object-cover ring-2 ring-white/20"
                 onError={(e) => { e.currentTarget.src = '/assets/logo.svg'; }}
               />
               <div>
-                <p className="font-display text-lg font-extrabold tracking-tight text-white">
+                <p className="font-display text-xl font-extrabold tracking-tight text-white">
                   {siteConfig.brand.name}
                 </p>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">
@@ -57,8 +58,18 @@ export default function Footer() {
             </p>
             <div className="mt-5 flex items-start gap-2 text-sm text-neutral-400">
               <MapPin size={16} className="mt-0.5 flex-shrink-0 text-primary-400" />
-              {schoolConfig.location}
+              <a href={siteConfig.contact.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary-400">
+                {schoolConfig.location}
+              </a>
             </div>
+            <a href={`tel:${siteConfig.contact.phoneTel}`} className="mt-3 flex items-center gap-2 text-sm text-neutral-400 hover:text-primary-400">
+              <Phone size={16} className="flex-shrink-0 text-primary-400" />
+              {siteConfig.contact.phone}
+            </a>
+            <a href={`mailto:${siteConfig.contact.email}`} onClick={(e) => openEmail(e, siteConfig.contact.email)} className="mt-3 flex items-center gap-2 break-all text-sm text-neutral-400 hover:text-primary-400">
+              <Mail size={16} className="flex-shrink-0 text-primary-400" />
+              {siteConfig.contact.email}
+            </a>
           </div>
 
           {/* Quick links */}
@@ -129,8 +140,19 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
-          <p className="text-xs text-neutral-500">
+          <p className="text-center text-xs text-neutral-500 sm:text-left">
             © {new Date().getFullYear()} {schoolConfig.title}. All rights reserved.
+          </p>
+          <p className="text-center text-xs text-neutral-400">
+            Developed by{' '}
+            <a
+              href="https://omaitrix.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary-400 transition-colors hover:text-primary-300 hover:underline"
+            >
+              OmAiTrix Solutions
+            </a>
           </p>
           <a
             href="#home"

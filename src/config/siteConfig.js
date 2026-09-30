@@ -34,6 +34,7 @@ const siteConfig = {
 
   media: {
     // Hero
+    admissionsBanner: 'Admissions Open 2027–2028',
     heroImage: '/assets/images/montessori-classroom.png',
     heroVideo: '', // e.g. '/assets/videos/school-tour.mp4' — leave blank to hide
 
@@ -57,7 +58,7 @@ const siteConfig = {
     activityImages: [
       '/assets/images/classroom-phonics-lesson.jpg', // Storytelling
       '/assets/images/creative-play-handprint.jpg', // Creative Play (Art & Craft)
-      '', // Music & Dance -> waiting for new image
+      '/assets/images/music-dance.png', // Music & Dance
       '/assets/images/gallery-celebration.png', // Nature & Outdoor Play
     ],
     socialDevelopmentImage: '/assets/images/social-development-cultural-day.jpg',
@@ -82,8 +83,14 @@ const siteConfig = {
   },
 
   contact: {
-    phone: 'Contact details to be updated',
-    email: 'Contact details to be updated',
+    phone: '+91 83284 11176',
+    phoneTel: '+918328411176', // used for tel: links
+    whatsappNumber: '918328411176', // country code + number, no + or spaces (wa.me format)
+    email: 'durgabizi07@gmail.com',
+    // Opens Google Maps (app on mobile, web on desktop). Replace with the exact
+    // "Share > Copy link" URL from Google Maps for a precise pin.
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Little+Krishna+Play+School+Muralinagar+Visakhapatnam+Andhra+Pradesh',
     address: 'Muralinagar, Visakhapatnam, Andhra Pradesh, India',
     locationShort: 'Muralinagar, Visakhapatnam',
   },

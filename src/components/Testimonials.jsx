@@ -25,13 +25,13 @@ export default function Testimonials() {
   const cardsRef = useScrollReveal();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 to-accent-50 py-8 md:py-10 lg:py-12">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 to-accent-50 py-6 md:py-8 lg:py-10">
       <div className="pointer-events-none absolute inset-0 z-0 bg-dots opacity-20" />
       <div className="pointer-events-none absolute right-10 top-10 z-0 animate-float-slow text-6xl opacity-10">💬</div>
       <div className="pointer-events-none absolute left-10 bottom-10 z-0 animate-float-medium text-6xl opacity-10">⭐</div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div ref={headerRef} className="reveal mx-auto mb-8 max-w-2xl text-center">
+        <div ref={headerRef} className="reveal mx-auto mb-6 max-w-2xl text-center">
           <p className="section-subtitle">Parent Feedback</p>
           <h2 className="section-title mt-2">What Parents Say About Us</h2>
           <p className="mt-4 text-base text-neutral-600">

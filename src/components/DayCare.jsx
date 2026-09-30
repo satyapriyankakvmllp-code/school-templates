@@ -15,7 +15,7 @@ export default function DayCare() {
   const ref = useScrollReveal();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 to-primary-50 py-8 md:py-10 lg:py-12">
+    <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 to-primary-50 py-6 md:py-8 lg:py-10">
       <div className="absolute inset-0 bg-dots opacity-30" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

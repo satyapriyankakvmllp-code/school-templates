@@ -45,7 +45,7 @@ export default function Programs() {
   const cardsRef = useScrollReveal();
 
   return (
-    <section id="programs" className="relative overflow-hidden bg-white py-8 md:py-10 lg:py-12">
+    <section id="programs" className="relative overflow-hidden bg-white py-6 md:py-8 lg:py-10">
       <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-secondary-100/30 blur-3xl" />
       <div className="absolute right-0 bottom-1/4 h-72 w-72 rounded-full bg-accent-100/30 blur-3xl" />
 
@@ -57,7 +57,7 @@ export default function Programs() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className="reveal mx-auto mb-8 max-w-2xl text-center">
+        <div ref={headerRef} className="reveal mx-auto mb-6 max-w-2xl text-center">
           <p className="section-subtitle">Our Programs</p>
           <h2 className="section-title mt-2">Learning for Every Little Step</h2>
           <p className="mt-4 text-base text-neutral-600">
@@ -79,18 +79,22 @@ export default function Programs() {
                 <div className={`h-2 bg-gradient-to-r ${program.color}`} />
 
                 <div className="p-7">
-                  <div
-                    className={`icon-bounce mb-5 flex h-16 w-16 items-center justify-center rounded-2xl ${program.bg} ${program.text} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6`}
-                  >
-                    <Icon size={30} />
+                  <div className="mb-4 flex items-center gap-4 sm:mb-0 sm:block">
+                    <div
+                      className={`icon-bounce mb-0 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${program.bg} ${program.text} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 sm:mb-5 sm:h-16 sm:w-16`}
+                    >
+                      <Icon size={30} />
+                    </div>
+                    <div className="min-w-0 sm:contents">
+                      <h3 className="mb-1 font-display text-xl font-bold text-neutral-800">
+                        {program.title}
+                      </h3>
+                      <p className={`mb-0 text-xs font-semibold uppercase tracking-wide ${program.text} sm:mb-3`}>
+                        {program.age}
+                      </p>
+                    </div>
                   </div>
 
-                  <h3 className="mb-1 font-display text-xl font-bold text-neutral-800">
-                    {program.title}
-                  </h3>
-                  <p className={`mb-3 text-xs font-semibold uppercase tracking-wide ${program.text}`}>
-                    {program.age}
-                  </p>
                   <p className="text-sm leading-relaxed text-neutral-600">
                     {program.desc}
                   </p>

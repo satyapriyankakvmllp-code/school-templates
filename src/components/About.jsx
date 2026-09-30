@@ -19,7 +19,7 @@ export default function About() {
   const rightRef = useScrollReveal();
 
   return (
-    <section id="about" className="relative overflow-hidden bg-cream-100 py-8 md:py-10 lg:py-12">
+    <section id="about" className="relative overflow-hidden bg-cream-100 py-6 md:py-8 lg:py-10">
       <div className="absolute right-0 top-20 h-64 w-64 rounded-full bg-primary-100/40 blur-3xl" />
 
       {/* Subtle floral decorative elements */}
@@ -39,7 +39,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image collage */}
-          <div ref={leftRef} className="reveal relative">
+          <div ref={leftRef} className="reveal reveal-left relative">
             <div className="relative grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="overflow-hidden rounded-3xl rounded-br-[3rem] border-4 border-white shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
@@ -88,7 +88,7 @@ export default function About() {
           </div>
 
           {/* Text content */}
-          <div ref={rightRef} className="reveal">
+          <div ref={rightRef} className="reveal reveal-right">
             <p className="section-subtitle">About Our School</p>
             <h2 className="section-title mt-2 mb-5">
               A Joyful Beginning for Every Child

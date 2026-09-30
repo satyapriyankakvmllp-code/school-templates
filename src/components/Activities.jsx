@@ -58,10 +58,10 @@ export default function Activities() {
   const gridRef = useScrollReveal();
 
   return (
-    <section id="activities" className="relative bg-white py-8 md:py-10 lg:py-12">
+    <section id="activities" className="relative bg-white py-6 md:py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className="reveal mx-auto mb-8 max-w-2xl text-center">
+        <div ref={headerRef} className="reveal mx-auto mb-6 max-w-2xl text-center">
           <p className="section-subtitle">Learning Activities</p>
           <h2 className="section-title mt-2">Every Day is Full of Discovery</h2>
           <p className="mt-4 text-base text-neutral-600">

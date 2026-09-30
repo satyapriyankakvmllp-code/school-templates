@@ -27,7 +27,7 @@ export default function Admissions() {
   return (
     <section
       id="admissions"
-      className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-accent-500 py-8 md:py-10 lg:py-12"
+      className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-accent-500 py-6 md:py-8 lg:py-10"
     >
       {/* Decorative shapes */}
       <div className="absolute inset-0 bg-dots opacity-20" />
@@ -37,9 +37,9 @@ export default function Admissions() {
       <div className="absolute right-[15%] bottom-[30%] animate-float-medium h-10 w-10 rounded-full bg-white/10" />
 
       <div ref={ref} className="reveal relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-8 max-w-2xl text-center">
+        <div className="mx-auto mb-6 max-w-2xl text-center">
           <p className="font-display text-sm font-bold uppercase tracking-wider text-white/80">
-            Admissions
+            {siteConfig.media.admissionsBanner}
           </p>
           <h2 className="mt-2 font-display text-4xl font-extrabold text-white sm:text-5xl">
             Begin Your Child's Journey With Us
@@ -50,32 +50,34 @@ export default function Admissions() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.title}
-                className="card-shimmer group relative rounded-3xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:-translate-y-2"
+                className="card-shimmer group relative flex items-start gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:-translate-y-2"
               >
-                <div className="mb-2 font-display text-5xl font-extrabold text-white/20">
-                  0{index + 1}
+                <div className="icon-bounce relative flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white text-primary-600 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                  <Icon size={22} />
+                  <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-accent-300 font-display text-[10px] font-extrabold text-neutral-800">
+                    {index + 1}
+                  </span>
                 </div>
-                <div className="icon-bounce mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-primary-600 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                  <Icon size={26} />
+                <div className="min-w-0">
+                  <h3 className="font-display text-base font-bold leading-tight text-white">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
+                    {step.desc}
+                  </p>
                 </div>
-                <h3 className="mb-2 font-display text-xl font-bold text-white">
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-white/85">
-                  {step.desc}
-                </p>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 text-center">
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 text-center">
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-display text-lg font-bold text-primary-600 shadow-2xl transition-all duration-300 hover:bg-cream-100 hover:-translate-y-1"

@@ -8,35 +8,35 @@ const galleryImages = [
     alt: 'Children reading together in the classroom',
     label: 'Story Time',
     span: 'lg:row-span-2 lg:col-span-2',
-    height: 'h-64 lg:h-full',
+    height: 'h-48 lg:h-full',
   },
   {
     src: g2,
     alt: 'Children enjoying arts and crafts',
     label: 'Art & Craft',
     span: '',
-    height: 'h-48',
+    height: 'h-36 sm:h-40',
   },
   {
     src: g3,
     alt: 'Children taking part in a hands-on activity',
     label: 'Play Time',
     span: '',
-    height: 'h-48',
+    height: 'h-36 sm:h-40',
   },
   {
     src: g4,
     alt: 'Teacher and children enjoying activities together',
     label: 'Learning Together',
     span: 'lg:col-span-2',
-    height: 'h-48',
+    height: 'h-36 sm:h-40',
   },
   {
     src: g5,
     alt: 'Children dressed in traditional outfits for cultural day',
     label: 'Cultural Day',
     span: '',
-    height: 'h-48',
+    height: 'h-36 sm:h-40',
     position: '50% 28%',
   },
   {
@@ -44,7 +44,7 @@ const galleryImages = [
     alt: 'Child making a creative handprint art activity',
     label: 'Creative Play',
     span: '',
-    height: 'h-48',
+    height: 'h-36 sm:h-40',
     position: '50% 22%',
   },
 ];
@@ -54,9 +54,9 @@ export default function Gallery() {
   const gridRef = useScrollReveal();
 
   return (
-    <section id="gallery" className="relative bg-white py-8 md:py-10 lg:py-12">
+    <section id="gallery" className="relative bg-white py-6 md:py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div ref={headerRef} className="reveal mx-auto mb-8 max-w-2xl text-center">
+        <div ref={headerRef} className="reveal mx-auto mb-6 max-w-2xl text-center">
           <p className="section-subtitle">Gallery</p>
           <h2 className="section-title mt-2">Moments of Joy and Learning</h2>
           <p className="mt-4 text-base text-neutral-600">
@@ -67,7 +67,7 @@ export default function Gallery() {
 
         <div
           ref={gridRef}
-          className="reveal-stagger grid grid-cols-2 gap-4 lg:grid-cols-4 lg:grid-rows-3"
+          className="reveal-stagger mx-auto grid max-w-4xl grid-cols-2 gap-3 lg:grid-cols-4 lg:grid-rows-3"
         >
           {galleryImages.map((image) => (
             <div

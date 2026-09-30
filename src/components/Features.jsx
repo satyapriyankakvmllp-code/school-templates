@@ -36,27 +36,29 @@ export default function Features() {
   const ref = useScrollReveal();
 
   return (
-    <section className="relative bg-cream-100 py-6 md:py-8 lg:py-10">
+    <section className="relative bg-cream-100 py-5 md:py-6 lg:py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={ref} className="reveal-stagger grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
-                className="card-shimmer card-glow group rounded-3xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover"
+                className="card-shimmer card-glow group flex items-start gap-3 rounded-2xl bg-white p-4 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover"
               >
                 <div
-                  className={`icon-bounce mb-5 flex h-16 w-16 items-center justify-center rounded-2xl ${feature.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}
+                  className={`icon-bounce flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl ${feature.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}
                 >
-                  <Icon size={28} />
+                  <Icon size={22} />
                 </div>
-                <h3 className="mb-2 font-display text-xl font-bold text-neutral-800">
-                  {feature.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-neutral-600">
-                  {feature.desc}
-                </p>
+                <div className="min-w-0">
+                  <h3 className="font-display text-base font-bold leading-tight text-neutral-800">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-1 text-xs leading-relaxed text-neutral-600 sm:text-sm">
+                    {feature.desc}
+                  </p>
+                </div>
               </div>
             );
           })}
